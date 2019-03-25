@@ -33,13 +33,14 @@ resource "oci_core_instance" "TFInstance" {
     ssh_authorized_keys = "${var.ssh_public_key}"
     user_data           = "${base64encode(file(var.BootStrapFile))}"
   }
-  defined_tags = "${
-    map(
-      "${oci_identity_tag_namespace.tag-namespace1.name}.${oci_identity_tag.tag2.name}", "awesome-app-server"
-    )
-  }"
-  freeform_tags = "${map("freeformkey${count.index}", "freeformvalue${count.index}")}"
-  timeouts {
-    create = "60m"
-  }
+  #defined_tags = "${
+  #  map(
+  #    "${oci_identity_tag_namespace.tag-namespace1.name}.${oci_identity_tag.tag2.name}", "awesome-app-server"
+  #  )
+  #}"
+  #freeform_tags = "${map("freeformkey${count.index}", "freeformvalue${count.index}")}"
+  #timeouts {
+  #  create = "60m"
+  #}
 }
+
