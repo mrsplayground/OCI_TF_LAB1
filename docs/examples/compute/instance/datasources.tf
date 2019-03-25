@@ -15,6 +15,6 @@ data "oci_core_boot_volume_attachments" "TFBootVolumeAttachments" {
   instance_id = "${oci_core_instance.TFInstance.*.id[count.index]}"
 }
 
-data "oci_core_instance_devices" "TFInstanceDevices" {
-  instance_id = "${oci_core_instance.TFInstance.*.id[count.index]}"
-}
+#data "oci_core_instance_devices" "TFInstanceDevices" {
+#  instance_id = "${oci_core_instance.TFInstance.*.id[count.index]}"
+#}
