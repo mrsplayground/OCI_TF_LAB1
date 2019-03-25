@@ -12,22 +12,22 @@ variable "ssh_private_key" {}
 
 # Defines the number of instances to deploy
 variable "NumInstances" {
-  default = "3"
+  default = "1"
 }
 
 # Defines the number of volumes to create and attach to each instance
 # NOTE: Changing this value after applying it could result in re-attaching existing volumes to different instances.
 # This is a result of using 'count' variables to specify the volume and instance IDs for the volume attachment resource.
 variable "NumIscsiVolumesPerInstance" {
-  default = "2"
+  default = "1"
 }
 
 variable "NumParavirtualizedVolumesPerInstance" {
-  default = "2"
+  default = "0"
 }
 
 variable "instance_shape" {
-  default = "VM.Standard2.1"
+  default = "VM.Standard2.2"
 }
 
 variable "instance_image_ocid" {
@@ -60,6 +60,6 @@ variable "tag_namespace_name" {
   default = "exampletagns"
 }
 
-variable "volume_attachment_device" {
-  default = "/dev/oracleoci/oraclevdb"
-}
+#variable "volume_attachment_device" {
+#  default = "/dev/oracleoci/oraclevdb"
+#}
